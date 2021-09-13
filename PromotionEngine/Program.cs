@@ -23,6 +23,7 @@ namespace PromotionEngine
                     }
                 }
             };
+            var totalDiscount = promotion.ApplyPromotions(cart);
 
         }
     }
