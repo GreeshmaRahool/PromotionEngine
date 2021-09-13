@@ -12,6 +12,7 @@ namespace PromotionEngine
             cart.Add(new CartItem { Sku = "B", Value = 30.0M }, 3);
             cart.Add(new CartItem { Sku = "C", Value = 20.0M }, 2);
             cart.Add(new CartItem { Sku = "D", Value = 15.0M }, 3);
+
         }
     }
 }
