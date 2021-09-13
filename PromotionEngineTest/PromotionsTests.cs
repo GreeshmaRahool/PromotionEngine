@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using PromotionEngine;
+using System;
 
 namespace PromotionEngineTest
 {
@@ -20,6 +21,23 @@ namespace PromotionEngineTest
             var discountAmount = discount.ProcessDiscount(cart);
 
             Assert.True(discountAmount == 40.0M);
+        }
+
+        [Test]
+        public void ComboDiscount()
+        {
+            Cart cart = new Cart();
+            cart.Add(new CartItem { Sku = "C", Value = 20.0M }, 2);
+            cart.Add(new CartItem { Sku = "D", Value = 15.0M }, 3);
+
+            var discount = new CombinationDiscount()
+            {
+                ComboSku = new Tuple<string, string>("C", "D"),
+                ComboDiscountPrice = 30.0M
+            };
+
+            var discountAmount = discount.ProcessDiscount(cart);
+            Assert.True(discountAmount == 10.0M);
         }
     }
 }
