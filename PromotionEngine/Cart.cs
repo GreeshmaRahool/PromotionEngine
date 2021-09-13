@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
-namespace PromotionEngine.Cart
+namespace PromotionEngine
 {
     public class Cart
     {
@@ -51,12 +52,23 @@ namespace PromotionEngine.Cart
             return query.ToList();
         }
 
-        public double CartTotal
+        public decimal CartTotal
         {
             get
             {
                 return Items.Sum(item => item.Value);
             }
+        }
+    }
+
+    public class CartItem
+    {
+        public string Sku { get; set; }
+        public decimal Value { get; set; }
+
+        public override string ToString()
+        {
+            return "SKU: " + Sku + " " + "Value: " + Value;
         }
     }
 }
