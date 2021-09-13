@@ -23,8 +23,12 @@ namespace PromotionEngine
                     }
                 }
             };
+
             var totalDiscount = promotion.ApplyPromotions(cart);
 
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\n--------");
+            Console.WriteLine("Your cart total is: " + cart.CartTotal);
         }
     }
 }
