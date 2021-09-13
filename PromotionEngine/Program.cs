@@ -29,6 +29,8 @@ namespace PromotionEngine
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\n--------");
             Console.WriteLine("Your cart total is: " + cart.CartTotal);
+            Console.WriteLine("Your discounts are: " + totalDiscount);
+            Console.WriteLine("Final Prices is: " + (cart.CartTotal - totalDiscount));
         }
     }
 }
