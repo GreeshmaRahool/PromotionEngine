@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PromotionEngine
 {
@@ -12,6 +13,16 @@ namespace PromotionEngine
             cart.Add(new CartItem { Sku = "B", Value = 30.0M }, 3);
             cart.Add(new CartItem { Sku = "C", Value = 20.0M }, 2);
             cart.Add(new CartItem { Sku = "D", Value = 15.0M }, 3);
+            var promotion = new Promotions()
+            {
+                Rules = new List<IRule>() {
+                    new DiscountSkuCount("A", 3, 20),
+                    new CombinationDiscount() {
+                        ComboSku = new Tuple<string,string>("C","D"),
+                        ComboDiscountPrice = 30.0M
+                    }
+                }
+            };
 
         }
     }

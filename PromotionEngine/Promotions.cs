@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace PromotionEngine
 {
-    public class PromotionsEngine
+    public class Promotions
     {
         public List<IRule> Rules { get; set; }
         public decimal ApplyPromotions(Cart cart)
